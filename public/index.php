@@ -1,5 +1,4 @@
 <?php
-
 $string = 'Hello World!???!!';
 echo $string;
 
@@ -21,5 +20,13 @@ foreach ($files as $name) {
 
     file_put_contents('app/test_file.txt', 'content');
 };
+
+// session_start();
+// $_SESSION['user_name'] = 'JOHN';
+// print_r($_SESSION);
+// print_r($_arr);
+$fileContent = file('/app/tmp/text.txt');
+print_r($fileContent)
+
 ?>
 
