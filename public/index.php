@@ -1,3 +1,6 @@
+
+<span>24.12.2020</span></br>
+_______________________________________________________________________</br></br>
 <?php
 $string = 'Hello World!???!!';
 echo $string;
@@ -27,7 +30,10 @@ foreach ($files as $name) {
 // print_r($_arr);
 $fileContent = file('/app/tmp/text.txt');
 // print_r($fileContent);
-
+?>
+</br><span>18.01.2021</span></br>
+_______________________________________________________________________</br></br>
+<?php
 function isLogin(){
     return false;
 };
@@ -70,11 +76,69 @@ if (isLogin()) {
 } else {
     if(isData()){
         addUser();
-        redirect('/login')
+        redirect('/login');
     }
     else {
         include ('./forms/registration.php');
     }
 };
+?>
+<span>20.01.2021</span></br>
+_______________________________________________________________________</br></br>
+<?php
+interface HasEngine {
+    public function getEngine();
+}
+abstract class Auto implements HasEngine {
+    public $engine;
+    public $body;
+    public $wheels;
+    private $vinNumber = 2;
+    protected $color;
+    const LEFT_WHEEL = 1;
+    public function engine(){
+        echo('auto engine');
+    }
+    public function getEngine(){
+        echo $this->$engine; 
+    }
+}
+
+class Truck extends Auto { 
+    public $loadCapacity;
+    public function engine(){
+        echo parent::engine()." Truck</br>";
+        
+    }
+}
+
+class Passenger extends Auto {
+    function __construct(){
+        print "create Passenger</br>";
+    }
+    public $type;
+    public function setColor($color){
+        $this->$color=$color;
+            }
+    public function getColor(){
+        return $this->$color;
+    }
+
+}
+
+$passenger = new Passenger;
+$truck = new Truck;
+$truck -> engine();
+$truck -> $engine = 25;
+$truck -> getEngine();
+$passenger -> setColor('red');
+echo Auto::LEFT_WHEEL;
+
+function pitStop(Auto $auto){
+    echo('PIT STOP </br>');
+    print_r($auto);
+}
+
+pitStop($truck)
 ?>
 
