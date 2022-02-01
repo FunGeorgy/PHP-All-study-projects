@@ -19,5 +19,7 @@ services:
     build: 
       context: .
       dockerfile: .deploy/docker/backend/Dockerfile
+    # env_file:
+    #   -./.env	
     volumes:
       - .:/app
